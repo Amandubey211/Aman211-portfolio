@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog page</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="wraper6">
+    <div class="navbar">
+      <section class="logo">
+        <img src="logos/neteorlogo.jpg" alt="" />
+      </section>
+      <section class="navlinks">
+        <ul id="navlist">
+          <li class="navdata"><a href="index.html">home</a></li>
+          <li class="navdata"><a href="about.html">about</a></li>
+          <li class="navdata"><a href="work.html">my work</a></li>
+          <li class="navdata"><a href="service.html">services</a></li>
+          <li class="navdata"><a href="blog.html">blogs</a></li>
+          <li class="navdata"><a href="contact.html">contact</a></li>
+
+        </ul>
+    </div>
+    <div class="blog-content">
+
+      <form action="" id="ourform">
+        <h1>a to-do application</h1>
+
+        <input type="text " id="ourfield" name="todo" autocomplete="off">
+        <button id="addbtn">Add</button>
+      </form>
+      <h3>need to do</h3> <br>
+      <ul id="ourlist">
+
+
+      </ul>
+
+    </div>
+   
+
+
+  </div>
+  <script>
+    let ourform = document.getElementById("ourform")
+    let ourfield = document.getElementById("ourfield")
+    let ourlist = document.getElementById("ourlist")
+
+    ourform.addEventListener("submit", (e) => {
+      e.preventDefault()
+      createditems(ourfield.value)
+    })
+    function createditems(x) {
+      let ourHtml = ` <li>${x}<button onclick = "deleteitems(this)">delete</button></li><br> `
+      ourlist.insertAdjacentHTML("beforeend", ourHtml)
+      ourfield.value = ""
+      ourfield.focus()
+
+    }
+    ourHtml.deleteitems(this).style.background.white
+    function deleteitems(elementtodelete) {
+      elementtodelete.parentElement.remove()
+
+    }
+  </script>
+</body>
+
+</html>
